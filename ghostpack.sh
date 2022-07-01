@@ -5,7 +5,7 @@
 # OS: Kali Linux / version:2022.2
 # ** You must run this script as ROOT **
 # TURN OFF THE SCREEN SAVER !!!
-ROOT_DIR=/root
+ROOT_DIR=/opt
 RESPONDER_DIR=/usr/share/responder/tools/
 PTF_DIR=/opt/package-manager/ptf
 
@@ -81,7 +81,7 @@ printf '\n---//---\\-----//---\\---\n\n'
 
 
 printf '\n-----------------------------------------------------\n'
-printf '\nCreating Directory in /root:\n'
+printf '\nCreating Directory in /opt:\n'
 printf '\n                     - data (wordlist && dic\n'
 printf '\n                     - utils (local management)\n'
 printf '\n                     - tools (with sub-category)\n'
@@ -345,7 +345,7 @@ printf '\n---//---\\-----//---\\---\n\n'
 
 
 printf '\n-----------------------------------------------------\n'
-printf '\nCreating Directory in /tools:\n'
+printf '\nCreating Directory in /opt/tools:\n'
 printf '\n                     - bruteforce\n'
 printf '\n                     - dorkfuzz\n'
 printf '\n                     - recon\n'
