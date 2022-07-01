@@ -5,7 +5,8 @@
 # OS: Kali Linux / version:2022.2
 # ** You must run this script as ROOT **
 # TURN OFF THE SCREEN SAVER !!!
-ROOT_DIR=/opt
+
+ROOT_DIR=/root
 RESPONDER_DIR=/usr/share/responder/tools/
 PTF_DIR=/opt/package-manager/ptf
 
@@ -80,22 +81,6 @@ apt install -y git wget gnupg2 build-essential binutils-dev vim unzip libssl-dev
 printf '\n---//---\\-----//---\\---\n\n'
 
 
-printf '\n-----------------------------------------------------\n'
-printf '\nCreating Directory in /opt:\n'
-printf '\n                     - data (wordlist && dic\n'
-printf '\n                     - utils (local management)\n'
-printf '\n                     - tools (with sub-category)\n'
-printf '\n                     - work (personal folder)\n'
-printf '\n-----------------------------------------------------\n\n'
-cd $ROOT_DIR
-mkdir {data,utils,tools,work}
-
-echo "Downloading..."
-cd $ROOT_DIR/utils
-git clone https://github.com/Arr0way/linux-local-enumeration-script.git
-git clone https://github.com/CISOfy/lynis.git
-printf '\n---//---\\-----//---\\---\n\n'
-
 
 printf '\n      ▌│█║▌║▌║ Installing PTF ▌│█║▌║▌║\n'
 printf '\n      --------------------------------\n\n'
@@ -139,13 +124,6 @@ printf '\n---//---\\-----//---\\---\n\n'
 printf '\n      ▌│█║▌║▌║ Password Attacks ▌│█║▌║▌║\n'
 printf '\n      ----------------------------------\n\n'
 apt install -y cewl crunch hashcat john medusa ophcrack wordlists seclists chntpw crackle fcrackzip hashid hash-identifier samdump2 hydra patator thc-pptp-bruter mimikatz passing-the-hash rsmangler pdfcrack
-
-cd $ROOT_DIR/data
-git clone https://github.com/fuzzdb-project/fuzzdb.git
-git clone https://github.com/danielmiessler/SecLists.git
-git clone https://github.com/swisskyrepo/PayloadsAllTheThings.git
-git clone https://github.com/1N3/IntruderPayloads
-cd $ROOT_DIR
 printf '\n---//---\\-----//---\\---\n\n'
 
 
@@ -191,11 +169,43 @@ printf '\n---//---\\-----//---\\---\n\n'
 
 printf '\n      ▌│█║▌║▌║ Installing tools ▌│█║▌║▌║\n'
 printf '\n      ----------------------------------\n\n'
+mkdir /opt/bruteforce/ && \
+git clone https://github.com/fuzzdb-project/fuzzdb.git /opt/bruteforce/fuzzdb/ && \
+git clone https://github.com/danielmiessler/SecLists.git /opt/bruteforce/SecLists/ && \
+git clone https://github.com/swisskyrepo/PayloadsAllTheThings.git /opt/bruteforce/PayloadsAllTheThings/ && \
+git clone https://github.com/1N3/IntruderPayloads /opt/bruteforce/IntruderPayloads/ && \
+git clone https://github.com/vanhauser-thc/thc-hydra.git /opt/bruteforce/thc-hydra/
+mkdir /otp/dorkfuzz/ && \
+git clone https://github.com/s0md3v/Photon.git /otp/dorkfuzz/Photon/ && \
+git clone https://github.com/FrancescoDiSalesGithub/dorker /otp/dorkfuzz/dorker/ && \
+git clone https://github.com/GerbenJavado/LinkFinder.git /otp/dorkfuzz/LinkFinder/
+mkdir /opt/recon/ && \
+git clone https://github.com/AlisamTechnology/ATSCAN.git /opt/recon/ATSCAN/ && \
+git clone https://github.com/tahmed11/DeepScan.git /opt/recon/DeepScan/ && \
+git clone https://github.com/machine1337/fast-scan.git /opt/recon/fast-scan/ && \
+git clone https://github.com/kakawome/Lethe.git /opt/recon/Lethe/ && \
+git clone https://github.com/Ha3MrX/Hacking.git /opt/recon/Hacking/
+mkdir /opt/osint/ && \
+git clone https://github.com/BullsEye0/ghost_eye.git /opt/osint/ghost_eye/ && \
+git clone https://github.com/trustedsec/social-engineer-toolkit.git /opt/osint/social-engineer-toolkit/ && \
+git clone https://github.com/Ignitetch/AdvPhishing.git /opt/osint/AdvPhishing/ && \
+git clone https://github.com/sherlock-project/sherlock.git /opt/osint/sherlock/ && \
+git clone https://github.com/BLINKING-IDIOT/Aliens_eye /opt/osint/Aliens_eye/
+mkdir /opt/ddos/ && \
+git clone https://github.com/NeverWonderLand/Impulse.git /opt/ddos/Impulse/ && \
+git clone https://github.com/7zx/overload.git /opt/ddos/overload/ && \
+git clone https://github.com/H1R0GH057/Anonymous.git /opt/ddos/Anonymous/ && \
+git clone https://github.com/firstapostle/Blood /opt/ddos/Blood/ && \
+git clone https://github.com/UBISOFT-1/AnonymousPAK-DDoS /opt/ddos/AnonymousPAK-DDoS/
+mkdir /opt/shells/ && \
+git clone https://github.com/machine1337/mafiahacks.git /opt/shells/mafiahacks/ && \
+git clone https://github.com/BlackArch/webshells.git /opt/shells/webshells/ && \
+git clone https://github.com/t0thkr1s/revshellgen.git /opt/shells/revshellgen/
 git clone https://github.com/GreatSCT/GreatSCT.git /opt/av-bypass/GreatSct/ && \
 git clone https://github.com/mdsecactivebreach/SharpShooter.git /opt/av-bypass/SharpShooter/
 git clone https://github.com/84KaliPleXon3/GitHackTools-TorghostNG /opt/anonymity/TorghostNG/
 git clone https://github.com/Kevin-Robertson/Inveigh /opt/exploitation/Inveigh/ && \
-git clone https://github.com/bettercap/bettercap.git /opt/exploitation/bettercap && \
+git clone https://github.com/bettercap/bettercap.git /opt/exploitation/bettercap/ && \
 git clone https://github.com/ropnop/kerbrute /opt/exploitation/kerbrute/
 git clone https://github.com/carlospolop/PEASS-ng /opt/intelligence-gathering/PEASS-ng/ && \
 git clone https://github.com/jondonas/linux-exploit-suggester-2.git /opt/intelligence-gathering/linux-exploit-suggester-2/ && \
@@ -213,6 +223,7 @@ git clone https://github.com/nil0x42/phpsploit /opt/webshells/phpsploit/
 git clone https://github.com/gchq/CyberChef.git /opt/reversing/CyberChef/
 git clone https://github.com/sundowndev/covermyass.git /opt/anti-forensics/covermyass/
 git clone https://github.com/leostat/rtfm /opt/miscellaneous/rtfm/
+git clone https://github.com/r00t0v3rr1d3/armitage.git /opt/armitage
 printf '\n---//---\\-----//---\\---\n\n'
 
 
@@ -344,126 +355,6 @@ cargo install rustscan
 printf '\n---//---\\-----//---\\---\n\n'
 
 
-printf '\n-----------------------------------------------------\n'
-printf '\nCreating Directory in /opt/tools:\n'
-printf '\n                     - bruteforce\n'
-printf '\n                     - dorkfuzz\n'
-printf '\n                     - recon\n'
-printf '\n                     - SE\n'
-printf '\n                     - Ddos\n'
-printf '\n                     - shells\n'
-printf '\n                     - web\n'
-printf '\n                     - windows\n'
-printf '\n-----------------------------------------------------\n\n'
-cd $ROOT_DIR/tools
-mkdir {bruteforce,windows,SE,recon,web,dorkfuzz,Ddos,shells}
-
-echo "Installing tools..."
-
-pushd bruteforce 
-git clone https://github.com/NeverWonderLand/d00r.git
-git clone https://github.com/lanjelot/patator.git
-git clone https://github.com/galkan/crowbar.git
-git clone https://github.com/vanhauser-thc/thc-hydra.git
-cd thc-hydra
-  ./configure
-  make
-  make install
-cd ..
-popd 
-printf '\n---//---\\-----//---\\---\n\n'
-
-
-pushd dorkfuzz 
-git clone https://github.com/s0md3v/Photon.git
-git clone https://github.com/FrancescoDiSalesGithub/dorker
-git clone https://github.com/tomato42/tlsfuzzer.git
-git clone https://github.com/GerbenJavado/LinkFinder.git
-popd 
-printf '\n---//---\\-----//---\\---\n\n'
-
-
-pushd recon 
-git clone https://github.com/AlisamTechnology/ATSCAN.git
-git clone https://github.com/projectdiscovery/nuclei.git
-git clone https://github.com/projectdiscovery/nuclei-templates.git
-git clone https://github.com/tahmed11/DeepScan.git
-git clone https://github.com/machine1337/fast-scan.git
-git clone https://github.com/FortyNorthSecurity/EyeWitness.git
-git clone https://github.com/smicallef/spiderfoot.git
-git clone https://github.com/michenriksen/aquatone.git
-git clone https://github.com/kakawome/Lethe.git
-git clone https://github.com/leebaird/discover.git
-git clone https://github.com/evyatarmeged/Raccoon.git 
-git clone https://github.com/rbsec/sslscan.git
-git clone https://github.com/drwetter/testssl.sh.git
-git clone https://github.com/Ha3MrX/Hacking.git
-popd 
-printf '\n---//---\\-----//---\\---\n\n'
-
-
-pushd SE 
-git clone https://github.com/BullsEye0/ghost_eye.git
-git clone https://github.com/trustedsec/social-engineer-toolkit.git
-git clone https://github.com/Ignitetch/AdvPhishing.git
-git clone https://github.com/sherlock-project/sherlock.git
-git clone https://github.com/Anish-M-code/URL-obfuscator.git 
-git clone https://github.com/BLINKING-IDIOT/Aliens_eye
-popd 
-printf '\n---//---\\-----//---\\---\n\n'
-
-
-pushd Ddos 
-git clone https://github.com/NeverWonderLand/Impulse.git
-git clone https://github.com/7zx/overload.git
-git clone https://github.com/H1R0GH057/Anonymous.git
-git clone https://github.com/firstapostle/Blood
-git clone https://github.com/UBISOFT-1/AnonymousPAK-DDoS
-popd 
-printf '\n---//---\\-----//---\\---\n\n'
-
-
-pushd shells 
-git clone https://github.com/machine1337/mafiahacks.git
-git clone https://github.com/BlackArch/webshells.git
-git clone https://github.com/t0thkr1s/revshellgen.git
-popd 
-printf '\n---//---\\-----//---\\---\n\n'
-
-
-pushd web 
-git clone https://github.com/commixproject/commix.git
-git clone https://github.com/droope/droopescan.git
-git clone https://github.com/beefproject/beef/
-cd beef 
-yes | ./install
-cd ..
-git clone https://github.com/mitmproxy/mitmproxy.git
-git clone https://github.com/sqlmapproject/sqlmap.git
-git clone https://github.com/wpscanteam/wpscan.git
-git clone https://github.com/OJ/gobuster.git
-git clone https://github.com/OWASP/Amass.git
-git clone https://github.com/arthaud/git-dumper.git
-git clone https://github.com/bambish/ScanQLi.git
-git clone https://github.com/projectdiscovery/httpx
-git clone https://github.com/EnableSecurity/wafw00f
-git clone https://github.com/Tuhinshubhra/CMSeeK
-git clone https://github.com/ffuf/ffuf
-git clone https://github.com/jaeles-project/gospider
-git clone https://github.com/lc/gau
-git clone https://github.com/tomnomnom/waybackurls
-popd 
-printf '\n---//---\\-----//---\\---\n\n'
-
-
-pushd windows 
-git clone https://github.com/lgandx/Responder.git
-git clone https://github.com/PowerShellMafia/PowerSploit.git
-git clone https://github.com/samratashok/nishang.git
-popd 
-printf '\n---//---\\-----//---\\---\n\n'
-
-
 echo "Updating.."
 apt-get update -y
 
@@ -480,9 +371,8 @@ printf '\n---//---\\-----//---\\---\n\n'
 printf '\n      ▌│█║▌║▌║ Docker ▌│█║▌║▌║\n'
 printf '\n      ------------------------\n\n'
 # enable and start docker
-systemctl stop docker &>/dev/null
-echo '{"bip":"172.16.199.1/24"}' >/etc/docker/daemon.json
 systemctl enable docker --now
+systemd docker start
 printf '\n---//---\\-----//---\\---\n\n'
 
 
@@ -525,17 +415,6 @@ Starting services..
 
 printf '\n---//---\\-----//---\\---\n\n'
 
-printf '\n▌│█║▌║▌║ Installing Armitage ▌│█║▌║▌║\n'
-printf '\n-------------------------------------\n\n'
-
-git clone https://github.com/r00t0v3rr1d3/armitage.git /opt/armitage
-cd /opt/armitage
-chmod +x package.sh
-./package.sh
-cd
-
-
-
 printf '\n▌│█║▌║▌║ Configuration of GO ▌│█║▌║▌║\n'
 printf '\n-------------------------------------\n\n'
 cd $ROOT_DIR/
@@ -573,14 +452,6 @@ cat <<EOF >$HOME/.tmux.conf
 EOF
 
 # =======================================================
-
-#Cloudflare DNS
-echo -e "\n2.\tSetting up Cloudflare DNS...\n"
-sudo echo -e "nnameserver 1.1.1.1\nnameserver 1.0.0.1" > /etc/resolv.conf
-
-printf '\n---//---\\-----//---\\---\n\n'
-
-
 
 printf '\n[+] Enabling bash session logging\n\n'
 
