@@ -2,6 +2,7 @@
 
 # GHOST PACK
 
+## Installation
 Start a new kali, and then simple as this;
 
 1. Update
@@ -21,6 +22,42 @@ Start a new kali, and then simple as this;
         ./ghostpack.sh
 
 4. Go take a walk (around 3-3.5 hours)
+
+------------------------------------------
+
+## Include
+
+- PTF
+- python3
+- Information Gathering
+- Vulnerability Analysis
+- Web Application Analysis
+- Database Assessment
+- Password Attacks
+- Wireless Attacks
+- Reverse Engineering
+- Exploitation Tools
+- Sniffing & Spoofing
+- Multirelay
+- Post Exploitation
+- pwncat
+- Forensics
+- Anti-Forensics
+- Reporting Tools
+- Social Engineering Tools
+- Putty
+- Windows Sysinternals
+- Rustscan
+- dorking
+- fuzzing
+- recon
+- Ddos
+- shells
+- gem
+- docker
+- Metasploit-framework
+- Armitage
+- GO
 
 ---------------------------------------
 * Still in work, use at your own risk!
