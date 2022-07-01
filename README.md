@@ -4,11 +4,15 @@
 
 Start a new kali, and then simple as this;
 
-1. Clone it
+1. Update
+
+        apt-get update && apt-get upgrade -y
+        
+2. Clone
 
         git clone https://github.com/NeverWonderLand/ghostpack
 
-2. Run it
+3. Run
 
         cd ghostpack
     
@@ -16,9 +20,7 @@ Start a new kali, and then simple as this;
     
         ./ghostpack.sh
 
-3. Go take a walk (around 3-3.5 hours)
-
-4. HACK THE PLANET
+4. Go take a walk (around 3-3.5 hours)
 
 ---------------------------------------
 * Still in work, use at your own risk!
