@@ -77,7 +77,12 @@ printf '\n---//---\\-----//---\\---\n\n'
 printf '\n      ▌│█║▌║▌║ Installing Packages ▌│█║▌║▌║\n'
 printf '\n      -------------------------------------\n\n'
 dpkg --add-architecture i386
-apt install -y git wget gnupg2 build-essential binutils-dev vim unzip libssl-dev autoconf automake libtool npm graphviz golang gfw bleachbit konsole xclip freerdp2-x11 powershell tor torsocks wine64 mingw-w64 binutils-mingw-w64-i686 binutils-mingw-w64-x86-64 g++-mingw-w64 g++-mingw-w64-i686 g++-mingw-w64-x86-64 gcc-mingw-w64 gcc-mingw-w64-base gcc-mingw-w64-i686 gcc-mingw-w64-x86-64 mingw-w64 mingw-w64-common mingw-w64-i686-dev mingw-w64-x86-64-dev golang rustc gcc ttf-mscorefonts-installer python3-pip python3-wheel libcompress-raw-lzma-perl python3-venv fpc gdc ldc ca-certificates lsb-release gem software-properties-common debian-keyring cargo geany gdebi gufw bleachbit iptables tmux libffi-dev docker.io aptitude libunwind-dev awscli doona dotdotpwn linux-exploit-suggester oscanner siparmyknife xsser knockpy urlextractor pompem dirsearch python3-xlrd python-xlrd-docs
+apt install -y git wget gnupg2 build-essential binutils-dev vim unzip libssl-dev autoconf automake libtool npm graphviz golang gufw bleachbit konsole xclip 
+apt install -y freerdp2-x11 powershell tor torsocks wine64 mingw-w64 binutils-mingw-w64-i686 binutils-mingw-w64-x86-64 g++-mingw-w64 g++-mingw-w64-i686 aptitude
+apt install -y g++-mingw-w64-x86-64 gcc-mingw-w64 gcc-mingw-w64-base gcc-mingw-w64-i686 gcc-mingw-w64-x86-64 mingw-w64 mingw-w64-common mingw-w64-i686-dev doona
+apt install -y mingw-w64-x86-64-dev golang rustc gcc ttf-mscorefonts-installer python3-pip python3-wheel libcompress-raw-lzma-perl python3-venv fpc gdc ldc 
+apt install -y ca-certificates lsb-release gem software-properties-common debian-keyring cargo geany gdebi gufw bleachbit iptables tmux libffi-dev docker.io 
+apt install -y libunwind-dev awscli dotdotpwn linux-exploit-suggester oscanner siparmyknife xsser knockpy urlextractor pompem dirsearch python3-xlrd python-xlrd-docs
 printf '\n---//---\\-----//---\\---\n\n'
 
 
@@ -175,10 +180,10 @@ git clone https://github.com/danielmiessler/SecLists.git /opt/bruteforce/SecList
 git clone https://github.com/swisskyrepo/PayloadsAllTheThings.git /opt/bruteforce/PayloadsAllTheThings/ && \
 git clone https://github.com/1N3/IntruderPayloads /opt/bruteforce/IntruderPayloads/ && \
 git clone https://github.com/vanhauser-thc/thc-hydra.git /opt/bruteforce/thc-hydra/
-mkdir /otp/dorkfuzz/ && \
-git clone https://github.com/s0md3v/Photon.git /otp/dorkfuzz/Photon/ && \
-git clone https://github.com/FrancescoDiSalesGithub/dorker /otp/dorkfuzz/dorker/ && \
-git clone https://github.com/GerbenJavado/LinkFinder.git /otp/dorkfuzz/LinkFinder/
+mkdir /opt/dorkfuzz/ && \
+git clone https://github.com/s0md3v/Photon.git /opt/dorkfuzz/Photon/ && \
+git clone https://github.com/FrancescoDiSalesGithub/dorker /opt/dorkfuzz/dorker/ && \
+git clone https://github.com/GerbenJavado/LinkFinder.git /opt/dorkfuzz/LinkFinder/
 mkdir /opt/recon/ && \
 git clone https://github.com/AlisamTechnology/ATSCAN.git /opt/recon/ATSCAN/ && \
 git clone https://github.com/tahmed11/DeepScan.git /opt/recon/DeepScan/ && \
