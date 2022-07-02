@@ -77,14 +77,15 @@ printf '\n---//---\\-----//---\\---\n\n'
 printf '\n      ▌│█║▌║▌║ Installing Packages ▌│█║▌║▌║\n'
 printf '\n      -------------------------------------\n\n'
 dpkg --add-architecture i386
-apt install -y git wget gnupg2 build-essential binutils-dev vim unzip libssl-dev autoconf automake libtool npm graphviz golang gufw bleachbit konsole xclip 
-apt install -y freerdp2-x11 powershell tor torsocks wine64 mingw-w64 binutils-mingw-w64-i686 binutils-mingw-w64-x86-64 g++-mingw-w64 g++-mingw-w64-i686 aptitude
-apt install -y g++-mingw-w64-x86-64 gcc-mingw-w64 gcc-mingw-w64-base gcc-mingw-w64-i686 gcc-mingw-w64-x86-64 mingw-w64 mingw-w64-common mingw-w64-i686-dev doona
-apt install -y mingw-w64-x86-64-dev golang rustc gcc ttf-mscorefonts-installer python3-pip python3-wheel libcompress-raw-lzma-perl python3-venv fpc gdc ldc 
-apt install -y ca-certificates lsb-release gem software-properties-common debian-keyring cargo geany gdebi gufw bleachbit iptables tmux libffi-dev docker.io 
-apt install -y libunwind-dev awscli dotdotpwn linux-exploit-suggester oscanner siparmyknife xsser knockpy urlextractor pompem dirsearch python3-xlrd python-xlrd-docs
+apt install -y git wget gnupg2 build-essential binutils-dev vim unzip libssl-dev autoconf automake libtool npm graphviz golang ufw bleachbit 
+apt install -y konsole xclip freerdp2-x11 powershell tor torsocks wine64 mingw-w64 binutils-mingw-w64-i686 binutils-mingw-w64-x86-64 
+apt install -y g++-mingw-w64 g++-mingw-w64-i686 g++-mingw-w64-x86-64 gcc-mingw-w64 gcc-mingw-w64-base gcc-mingw-w64-i686 gcc-mingw-w64-x86-64 
+apt install -y mingw-w64 mingw-w64-common mingw-w64-i686-dev mingw-w64-x86-64-dev golang rustc gcc ttf-mscorefonts-installer python3-pip 
+apt install -y python3-wheel libcompress-raw-lzma-perl python3-venv fpc gdc ldc ca-certificates lsb-release gem software-properties-common 
+apt install -y debian-keyring cargo geany gdebi gufw bleachbit iptables tmux libffi-dev docker.io aptitude libunwind-dev awscli doona 
+apt install -y dotdotpwn linux-exploit-suggester oscanner siparmyknife xsser knockpy urlextractor pompem dirsearch python3-xlrd python-xlrd-docs
+ufw enable
 printf '\n---//---\\-----//---\\---\n\n'
-
 
 
 printf '\n      ▌│█║▌║▌║ Installing PTF ▌│█║▌║▌║\n'
@@ -189,6 +190,7 @@ git clone https://github.com/AlisamTechnology/ATSCAN.git /opt/recon/ATSCAN/ && \
 git clone https://github.com/tahmed11/DeepScan.git /opt/recon/DeepScan/ && \
 git clone https://github.com/machine1337/fast-scan.git /opt/recon/fast-scan/ && \
 git clone https://github.com/kakawome/Lethe.git /opt/recon/Lethe/ && \
+git clone https://github.com/NeverWonderLand/tellme.git /opt/recon/ && \
 git clone https://github.com/Ha3MrX/Hacking.git /opt/recon/Hacking/
 mkdir /opt/osint/ && \
 git clone https://github.com/BullsEye0/ghost_eye.git /opt/osint/ghost_eye/ && \
@@ -376,8 +378,9 @@ printf '\n---//---\\-----//---\\---\n\n'
 printf '\n      ▌│█║▌║▌║ Docker ▌│█║▌║▌║\n'
 printf '\n      ------------------------\n\n'
 # enable and start docker
+systemctl stop docker &>/dev/null
+echo '{"bip":"172.16.199.1/24"}' >/etc/docker/daemon.json
 systemctl enable docker --now
-systemd docker start
 printf '\n---//---\\-----//---\\---\n\n'
 
 
@@ -586,10 +589,6 @@ sudo nano /etc/postgresql/14/main/pg_hba.conf
 # Then:
 sudo systemctl enable postgresql
 sudo systemctl start postgresql
-
-
-# gufw
-gufw enable
 
 
 # Setup iptables
