@@ -1,3 +1,5 @@
+[English](https://github.com/NeverWonderLand/ghostpack) | [Spanish](https://github.com/SobrioRiot/ghostpack-esp)
+
 ## GHOSTPACK
 ## Self-Installation of an Advanced Environment Dedicated to Ethical Hacking 
         * This tool is made to run after a new installation of Kali Linux.
