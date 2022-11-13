@@ -202,7 +202,7 @@ mkdir /opt/ddos/ && \
 git clone https://github.com/NeverWonderLand/Impulse.git /opt/ddos/Impulse/ && \
 git clone https://github.com/7zx/overload.git /opt/ddos/overload/ && \
 git clone https://github.com/H1R0GH057/Anonymous.git /opt/ddos/Anonymous/ && \
-git clone https://github.com/firstapostle/Blood /opt/ddos/Blood/ && \
+git clone https://github.com/firstapostle/Blood.git /opt/ddos/Blood/ && \
 git clone https://github.com/UBISOFT-1/AnonymousPAK-DDoS /opt/ddos/AnonymousPAK-DDoS/
 mkdir /opt/shells/ && \
 git clone https://github.com/machine1337/mafiahacks.git /opt/shells/mafiahacks/ && \
