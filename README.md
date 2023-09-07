@@ -1,3 +1,5 @@
+# NOT MAINTAIN ANYMORE
+
 [English](https://github.com/NeverWonderLand/ghostpack) | [Spanish](https://github.com/SobrioRiot/ghostpack-esp)
 
 ## GHOSTPACK
